@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.coverage
+venv/
+.venv/
+env/
+.env
+data/
+models/*.pkl
+models/*.joblib
+models/*.h5
+models/*.pt
+.DS_Store
