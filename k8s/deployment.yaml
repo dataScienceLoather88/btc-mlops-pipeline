@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: btc-forecast-api
+  labels:
+    app: btc-forecast-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: btc-forecast-api
+  template:
+    metadata:
+      labels:
+        app: btc-forecast-api
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+      initContainers:
+        - name: seed-model
+          image: l232525/btc-forecast-api:latest
+          command: ["sh", "-c"]
+          args:
+            - >
+              [ -f /app/models/btc_forecaster.pkl ] ||
+              { cp /app/app/models/btc_forecaster.pkl /app/models/btc_forecaster.pkl.tmp &&
+              mv /app/models/btc_forecaster.pkl.tmp /app/models/btc_forecaster.pkl; }
+          volumeMounts:
+            - name: models
+              mountPath: /app/models
+      containers:
+        - name: api
+          image: l232525/btc-forecast-api:latest
+          ports:
+            - containerPort: 5000
+          envFrom:
+            - configMapRef:
+                name: btc-forecast-config
+            - secretRef:
+                name: btc-forecast-secret
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 15
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+          volumeMounts:
+            - name: models
+              mountPath: /app/models
+      volumes:
+        - name: models
+          persistentVolumeClaim:
+            claimName: btc-models-pvc
