@@ -28,6 +28,13 @@ def preprocess_features():
 
 
 def train_evaluate():
+    # Airflow loads dill, which taints pickles that Flask cannot read
+    try:
+        import dill
+
+        dill.extend(False)
+    except ImportError:
+        pass
     from src.train_forecast import train_and_evaluate
 
     return train_and_evaluate(PROCESSED_PATH, MODEL_PATH, MAX_MAPE)
