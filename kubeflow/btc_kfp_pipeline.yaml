@@ -1,0 +1,149 @@
+# PIPELINE DEFINITION
+# Name: btc-forecast-pipeline
+# Description: Ingest BTC-USD data, build features, train and evaluate
+# Inputs:
+#    days: int [Default: 730.0]
+#    max_mape: float [Default: 5.0]
+components:
+  comp-build-features:
+    executorLabel: exec-build-features
+    inputDefinitions:
+      artifacts:
+        raw_data:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+    outputDefinitions:
+      artifacts:
+        features:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-ingest-data:
+    executorLabel: exec-ingest-data
+    inputDefinitions:
+      parameters:
+        days:
+          parameterType: NUMBER_INTEGER
+    outputDefinitions:
+      artifacts:
+        raw_data:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-train-model:
+    executorLabel: exec-train-model
+    inputDefinitions:
+      artifacts:
+        features:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+      parameters:
+        max_mape:
+          parameterType: NUMBER_DOUBLE
+    outputDefinitions:
+      artifacts:
+        model:
+          artifactType:
+            schemaTitle: system.Model
+            schemaVersion: 0.0.1
+deploymentSpec:
+  executors:
+    exec-build-features:
+      container:
+        args:
+        - import sys; from src.train_forecast import preprocess; preprocess(sys.argv[1],
+          sys.argv[2])
+        - '{{$.inputs.artifacts[''raw_data''].path}}'
+        - '{{$.outputs.artifacts[''features''].path}}'
+        command:
+        - python
+        - -c
+        image: docker.io/l232525/btc-forecast-api:latest
+    exec-ingest-data:
+      container:
+        args:
+        - --output
+        - '{{$.outputs.artifacts[''raw_data''].path}}'
+        - --days
+        - '{{$.inputs.parameters[''days'']}}'
+        command:
+        - python
+        - -m
+        - src.etl_fetch
+        image: docker.io/l232525/btc-forecast-api:latest
+    exec-train-model:
+      container:
+        args:
+        - import sys; from src.train_forecast import train_and_evaluate; train_and_evaluate(sys.argv[1],
+          sys.argv[2], float(sys.argv[3]))
+        - '{{$.inputs.artifacts[''features''].path}}'
+        - '{{$.outputs.artifacts[''model''].path}}'
+        - '{{$.inputs.parameters[''max_mape'']}}'
+        command:
+        - python
+        - -c
+        image: docker.io/l232525/btc-forecast-api:latest
+pipelineInfo:
+  description: Ingest BTC-USD data, build features, train and evaluate
+  name: btc-forecast-pipeline
+root:
+  dag:
+    tasks:
+      build-features:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-build-features
+        dependentTasks:
+        - ingest-data
+        inputs:
+          artifacts:
+            raw_data:
+              taskOutputArtifact:
+                outputArtifactKey: raw_data
+                producerTask: ingest-data
+        taskInfo:
+          name: build-features
+      ingest-data:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-ingest-data
+        inputs:
+          parameters:
+            days:
+              componentInputParameter: days
+        taskInfo:
+          name: ingest-data
+      train-model:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-train-model
+        dependentTasks:
+        - build-features
+        inputs:
+          artifacts:
+            features:
+              taskOutputArtifact:
+                outputArtifactKey: features
+                producerTask: build-features
+          parameters:
+            max_mape:
+              componentInputParameter: max_mape
+        taskInfo:
+          name: train-model
+  inputDefinitions:
+    parameters:
+      days:
+        defaultValue: 730.0
+        isOptional: true
+        parameterType: NUMBER_INTEGER
+      max_mape:
+        defaultValue: 5.0
+        isOptional: true
+        parameterType: NUMBER_DOUBLE
+schemaVersion: 2.1.0
+sdkVersion: kfp-2.18.2
