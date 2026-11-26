@@ -6,7 +6,6 @@ from src.model_utils import (
     MODEL_VERSION,
     forecast_next_days,
     load_or_train_bundle,
-    train_and_save_model,
 )
 
 app = Flask(__name__)
@@ -107,8 +106,11 @@ def predict():
 
 @app.route("/reload-model", methods=["POST"])
 def reload_model():
+    """Re-read the model file written by the Airflow DAG (no retraining)."""
     try:
-        bundle = train_and_save_model(MODEL_PATH)
+        if not os.path.exists(MODEL_PATH):
+            return jsonify({"error": f"No model file at {MODEL_PATH}"}), 404
+        bundle = load_or_train_bundle(MODEL_PATH)
         return (
             jsonify(
                 {
