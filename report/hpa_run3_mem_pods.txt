@@ -1,0 +1,19 @@
+15:41:49 1.463GiB / 2.148GiB (68.09%) fvk8d:Running xdqgx:Running 
+15:41:55 1.465GiB / 2.148GiB (68.21%) fvk8d:Running xdqgx:Running 
+15:42:01 1.468GiB / 2.148GiB (68.33%) fvk8d:Running xdqgx:Running 
+15:42:07 1.468GiB / 2.148GiB (68.33%) fvk8d:Running xdqgx:Running 
+15:42:13 1.464GiB / 2.148GiB (68.13%) fvk8d:Running xdqgx:Running 
+15:42:19 1.47GiB / 2.148GiB (68.43%) fvk8d:Running xdqgx:Running 
+15:42:25 1.474GiB / 2.148GiB (68.59%) fvk8d:Running xdqgx:Running 
+15:42:31 1.474GiB / 2.148GiB (68.62%) fvk8d:Running xdqgx:Running 
+15:42:37 1.476GiB / 2.148GiB (68.71%) fvk8d:Running xdqgx:Running 
+15:42:43 1.47GiB / 2.148GiB (68.43%) fvk8d:Running xdqgx:Running 
+15:42:49 1.474GiB / 2.148GiB (68.60%) fvk8d:Running xdqgx:Running 
+15:42:56 1.478GiB / 2.148GiB (68.80%) fvk8d:Running xdqgx:Running 
+15:43:02 1.482GiB / 2.148GiB (68.97%) fvk8d:Running xdqgx:Running 
+15:43:08 1.483GiB / 2.148GiB (69.01%) fvk8d:Running xdqgx:Running 
+15:43:14 1.476GiB / 2.148GiB (68.71%) fvk8d:Running xdqgx:Running 
+15:43:20 1.561GiB / 2.148GiB (72.64%) fcszr:Running fvk8d:Running j6rc7:Running xdqgx:Running 
+15:43:26 1.941GiB / 2.148GiB (90.33%) fcszr:Running fvk8d:Running j6rc7:Running xdqgx:Running 
+15:43:32 1.943GiB / 2.148GiB (90.45%) fcszr:Running fvk8d:Running j6rc7:Running xdqgx:Running 
+15:43:38 1.94GiB / 2.148GiB (90.28%) fcszr:Running fvk8d:Running j6rc7:Running xdqgx:Running 

@@ -1,0 +1,13 @@
+Running 2m test @ http://192.168.49.2/predict
+  2 threads and 10 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    36.74ms   34.20ms 281.34ms   76.97%
+    Req/Sec   163.66     65.83   535.00     71.58%
+  Latency Distribution
+     50%   26.42ms
+     75%   61.02ms
+     90%   88.39ms
+     99%  138.36ms
+  39154 requests in 2.00m, 21.36MB read
+Requests/sec:    326.04
+Transfer/sec:    182.12KB
