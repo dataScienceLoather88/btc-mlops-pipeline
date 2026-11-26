@@ -21,6 +21,7 @@ spec:
       initContainers:
         - name: seed-model
           image: l232525/btc-forecast-api:latest
+          imagePullPolicy: IfNotPresent
           command: ["sh", "-c"]
           args:
             - >
@@ -33,6 +34,7 @@ spec:
       containers:
         - name: api
           image: l232525/btc-forecast-api:latest
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000
           envFrom:
