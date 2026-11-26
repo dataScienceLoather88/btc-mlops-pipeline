@@ -1,0 +1,7 @@
+NAME               REFERENCE                     TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+btc-forecast-hpa   Deployment/btc-forecast-api   cpu: 1%/60%   2         4         2          40m
+btc-forecast-hpa   Deployment/btc-forecast-api   cpu: 270%/60%   2         4         2          42m
+btc-forecast-hpa   Deployment/btc-forecast-api   cpu: 270%/60%   2         4         4          42m
+btc-forecast-hpa   Deployment/btc-forecast-api   cpu: 492%/60%   2         4         4          43m
+btc-forecast-hpa   Deployment/btc-forecast-api   cpu: 156%/60%   2         4         4          44m
+btc-forecast-hpa   Deployment/btc-forecast-api   cpu: 1%/60%     2         4         4          45m

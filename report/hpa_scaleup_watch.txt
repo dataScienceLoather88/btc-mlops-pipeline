@@ -1,0 +1,7 @@
+NAME               REFERENCE                     TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+btc-forecast-hpa   Deployment/btc-forecast-api   cpu: 1%/60%   2         8         2          13m
+btc-forecast-hpa   Deployment/btc-forecast-api   cpu: 350%/60%   2         8         2          14m
+btc-forecast-hpa   Deployment/btc-forecast-api   cpu: 350%/60%   2         8         4          14m
+btc-forecast-hpa   Deployment/btc-forecast-api   cpu: 350%/60%   2         8         8          14m
+STATUS             REASON                        MESSAGE
+Failure            InternalError                 an error on the server ("unable to decode an event from the watch stream: http2: client connection lost") has prevented the request from succeeding

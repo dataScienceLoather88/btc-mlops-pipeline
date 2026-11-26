@@ -1,0 +1,5 @@
+wrk -t2 -c10 -d120s --latency -s /tmp/predict.lua http://192.168.49.2/predict
+Latency avg 42.81ms stdev 37.38ms max 290.78ms
+p50 44.88ms p75 81.61ms p90 92.51ms p99 136.52ms
+31324 requests in 2.00m, 16.91MB read
+Requests/sec: 261.01
