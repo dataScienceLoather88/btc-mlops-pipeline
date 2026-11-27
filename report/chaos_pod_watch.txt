@@ -1,0 +1,18 @@
+15:24:28 NAME                              READY   STATUS    RESTARTS      AGE     IP           NODE       NOMINATED NODE   READINESS GATES
+15:24:28 btc-forecast-api-f5787bf4-5bggn   1/1     Running   0             3m27s   10.244.0.7   minikube   <none>           <none>
+15:24:28 btc-forecast-api-f5787bf4-fvk8d   1/1     Running   1 (11m ago)   13h     10.244.0.4   minikube   <none>           <none>
+15:24:39 btc-forecast-api-f5787bf4-5bggn   1/1     Terminating   0             3m38s   10.244.0.7   minikube   <none>           <none>
+15:24:39 btc-forecast-api-f5787bf4-xdqgx   0/1     Pending       0             0s      <none>       <none>     <none>           <none>
+15:24:39 btc-forecast-api-f5787bf4-5bggn   1/1     Terminating   0             3m38s   10.244.0.7   minikube   <none>           <none>
+15:24:39 btc-forecast-api-f5787bf4-xdqgx   0/1     Pending       0             0s      <none>       minikube   <none>           <none>
+15:24:39 btc-forecast-api-f5787bf4-xdqgx   0/1     Init:0/1      0             0s      <none>       minikube   <none>           <none>
+15:24:39 btc-forecast-api-f5787bf4-xdqgx   0/1     Init:0/1      0             0s      <none>       minikube   <none>           <none>
+15:24:39 btc-forecast-api-f5787bf4-xdqgx   0/1     Init:0/1      0             0s      10.244.0.8   minikube   <none>           <none>
+15:24:39 btc-forecast-api-f5787bf4-xdqgx   0/1     PodInitializing   0             0s      10.244.0.8   minikube   <none>           <none>
+15:24:40 btc-forecast-api-f5787bf4-xdqgx   0/1     Running           0             1s      10.244.0.8   minikube   <none>           <none>
+15:24:40 btc-forecast-api-f5787bf4-5bggn   0/1     Completed         0             3m39s   10.244.0.7   minikube   <none>           <none>
+15:24:40 btc-forecast-api-f5787bf4-5bggn   0/1     Completed         0             3m39s   10.244.0.7   minikube   <none>           <none>
+15:24:40 btc-forecast-api-f5787bf4-5bggn   0/1     Completed         0             3m39s   10.244.0.7   minikube   <none>           <none>
+15:24:40 btc-forecast-api-f5787bf4-5bggn   0/1     Completed         0             3m39s   10.244.0.7   minikube   <none>           <none>
+15:24:45 btc-forecast-api-f5787bf4-xdqgx   0/1     Running           0             6s      10.244.0.8   minikube   <none>           <none>
+15:24:45 btc-forecast-api-f5787bf4-xdqgx   1/1     Running           0             6s      10.244.0.8   minikube   <none>           <none>

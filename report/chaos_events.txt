@@ -1,0 +1,15 @@
+4m11s       Normal    Killing                        pod/btc-forecast-api-f5787bf4-59dzj        Stopping container api
+4m11s       Normal    Pulled                         pod/btc-forecast-api-f5787bf4-5bggn        Container image "l232525/btc-forecast-api:latest" already present on machine and can be accessed by the pod
+4m11s       Normal    Created                        pod/btc-forecast-api-f5787bf4-5bggn        Container created
+4m11s       Normal    Started                        pod/btc-forecast-api-f5787bf4-5bggn        Container started
+4m10s       Normal    Started                        pod/btc-forecast-api-f5787bf4-5bggn        Container started
+4m10s       Normal    Pulled                         pod/btc-forecast-api-f5787bf4-5bggn        Container image "l232525/btc-forecast-api:latest" already present on machine and can be accessed by the pod
+4m10s       Normal    Created                        pod/btc-forecast-api-f5787bf4-5bggn        Container created
+33s         Normal    Created                        pod/btc-forecast-api-f5787bf4-xdqgx        Container created
+33s         Normal    Killing                        pod/btc-forecast-api-f5787bf4-5bggn        Stopping container api
+33s         Normal    Pulled                         pod/btc-forecast-api-f5787bf4-xdqgx        Container image "l232525/btc-forecast-api:latest" already present on machine and can be accessed by the pod
+33s         Normal    Created                        pod/btc-forecast-api-f5787bf4-xdqgx        Container created
+33s         Normal    Pulled                         pod/btc-forecast-api-f5787bf4-xdqgx        Container image "l232525/btc-forecast-api:latest" already present on machine and can be accessed by the pod
+33s         Normal    Started                        pod/btc-forecast-api-f5787bf4-xdqgx        Container started
+33s         Normal    SuccessfulCreate               replicaset/btc-forecast-api-f5787bf4       Created pod: btc-forecast-api-f5787bf4-xdqgx
+33s         Normal    Started                        pod/btc-forecast-api-f5787bf4-xdqgx        Container started

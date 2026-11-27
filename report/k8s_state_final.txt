@@ -1,0 +1,17 @@
+NAME                                  READY   STATUS    RESTARTS      AGE     IP           NODE       NOMINATED NODE   READINESS GATES
+pod/btc-forecast-api-f5787bf4-fvk8d   1/1     Running   1 (20m ago)   13h     10.244.0.4   minikube   <none>           <none>
+pod/btc-forecast-api-f5787bf4-xdqgx   1/1     Running   0             8m12s   10.244.0.8   minikube   <none>           <none>
+
+NAME                             TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE   SELECTOR
+service/btc-forecast-clusterip   ClusterIP   10.104.136.132   <none>        80/TCP         23h   app=btc-forecast-api
+service/btc-forecast-nodeport    NodePort    10.105.171.68    <none>        80:30080/TCP   23h   app=btc-forecast-api
+service/kubernetes               ClusterIP   10.96.0.1        <none>        443/TCP        23h   <none>
+
+NAME                                                   REFERENCE                     TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/btc-forecast-hpa   Deployment/btc-forecast-api   cpu: 1%/60%   2         4         2          14h
+
+NAME                                             CLASS   HOSTS                ADDRESS        PORTS   AGE
+ingress.networking.k8s.io/btc-forecast-ingress   nginx   btc-forecast.local   192.168.49.2   80      16h
+
+NAME                                   STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE   VOLUMEMODE
+persistentvolumeclaim/btc-models-pvc   Bound    pvc-bdb40940-9fd6-4f55-9f87-c3f20090c340   1Gi        RWO            standard       <unset>                 23h   Filesystem

@@ -1,0 +1,25 @@
+10m         Normal    Started                        pod/btc-forecast-api-f5787bf4-59dzj        Container started
+10m         Normal    Pulled                         pod/btc-forecast-api-f5787bf4-59dzj        Container image "l232525/btc-forecast-api:latest" already present on machine and can be accessed by the pod
+10m         Normal    Created                        pod/btc-forecast-api-f5787bf4-59dzj        Container created
+10m         Normal    Started                        pod/btc-forecast-api-f5787bf4-59dzj        Container started
+10m         Normal    Pulled                         pod/btc-forecast-api-f5787bf4-59dzj        Container image "l232525/btc-forecast-api:latest" already present on machine and can be accessed by the pod
+10m         Normal    SandboxChanged                 pod/btc-forecast-api-f5787bf4-fvk8d        Pod sandbox changed, it will be killed and re-created.
+10m         Normal    SandboxChanged                 pod/btc-forecast-api-f5787bf4-59dzj        Pod sandbox changed, it will be killed and re-created.
+10m         Normal    Created                        pod/btc-forecast-api-f5787bf4-fvk8d        Container created
+10m         Normal    Started                        pod/btc-forecast-api-f5787bf4-fvk8d        Container started
+10m         Normal    Pulled                         pod/btc-forecast-api-f5787bf4-fvk8d        Container image "l232525/btc-forecast-api:latest" already present on machine and can be accessed by the pod
+10m         Normal    Created                        pod/btc-forecast-api-f5787bf4-fvk8d        Container created
+10m         Normal    Started                        pod/btc-forecast-api-f5787bf4-fvk8d        Container started
+10m         Normal    Created                        pod/btc-forecast-api-f5787bf4-59dzj        Container created
+10m         Normal    RegisteredNode                 node/minikube                              Node minikube event: Registered Node minikube in Controller
+9m13s       Warning   FailedGetResourceMetric        horizontalpodautoscaler/btc-forecast-hpa   failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server is currently unable to handle the request (get pods.metrics.k8s.io)
+9m13s       Warning   FailedComputeMetricsReplicas   horizontalpodautoscaler/btc-forecast-hpa   invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server is currently unable to handle the request (get pods.metrics.k8s.io)
+9m2s        Normal    Sync                           ingress/btc-forecast-ingress               Scheduled for sync
+2m16s       Normal    Pulled                         pod/btc-forecast-api-f5787bf4-5bggn        Container image "l232525/btc-forecast-api:latest" already present on machine and can be accessed by the pod
+2m16s       Normal    Killing                        pod/btc-forecast-api-f5787bf4-59dzj        Stopping container api
+2m16s       Normal    Created                        pod/btc-forecast-api-f5787bf4-5bggn        Container created
+2m16s       Normal    SuccessfulCreate               replicaset/btc-forecast-api-f5787bf4       Created pod: btc-forecast-api-f5787bf4-5bggn
+2m16s       Normal    Started                        pod/btc-forecast-api-f5787bf4-5bggn        Container started
+2m15s       Normal    Started                        pod/btc-forecast-api-f5787bf4-5bggn        Container started
+2m15s       Normal    Created                        pod/btc-forecast-api-f5787bf4-5bggn        Container created
+2m15s       Normal    Pulled                         pod/btc-forecast-api-f5787bf4-5bggn        Container image "l232525/btc-forecast-api:latest" already present on machine and can be accessed by the pod

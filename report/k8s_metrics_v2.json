@@ -1,0 +1,11 @@
+{
+    "metrics": {
+        "mae": 936.444,
+        "mape": 0.8825,
+        "rmse": 1057.1072,
+        "samples_trained": 692,
+        "test_window_days": 7,
+        "updated_at": "2026-11-25T20:29:24.666851+00:00"
+    },
+    "model_version": "v2.0.0-ridge-lag"
+}

@@ -1,0 +1,35 @@
+{
+    "forecast_days": 7,
+    "model_version": "v2.0.0-ridge-lag",
+    "predictions": [
+        {
+            "date": "2026-11-27",
+            "predicted_close": 106239.38
+        },
+        {
+            "date": "2026-11-28",
+            "predicted_close": 106285.35
+        },
+        {
+            "date": "2026-11-29",
+            "predicted_close": 106286.34
+        },
+        {
+            "date": "2026-11-30",
+            "predicted_close": 106310.72
+        },
+        {
+            "date": "2026-12-01",
+            "predicted_close": 106344.5
+        },
+        {
+            "date": "2026-12-02",
+            "predicted_close": 106409.22
+        },
+        {
+            "date": "2026-12-03",
+            "predicted_close": 106457.05
+        }
+    ],
+    "symbol": "BTC-USD"
+}
