@@ -1,0 +1,40 @@
+02:32:01
+NAME                                  READY   STATUS    RESTARTS      AGE   IP           NODE       NOMINATED NODE   READINESS GATES
+pod/btc-forecast-api-f5787bf4-fvk8d   1/1     Running   1 (11h ago)   24h   10.244.0.4   minikube   <none>           <none>
+pod/btc-forecast-api-f5787bf4-xdqgx   1/1     Running   0             11h   10.244.0.8   minikube   <none>           <none>
+
+NAME                             TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE   SELECTOR
+service/btc-forecast-clusterip   ClusterIP   10.104.136.132   <none>        80/TCP         34h   app=btc-forecast-api
+service/btc-forecast-nodeport    NodePort    10.105.171.68    <none>        80:30080/TCP   34h   app=btc-forecast-api
+service/kubernetes               ClusterIP   10.96.0.1        <none>        443/TCP        34h   <none>
+
+NAME                                                   REFERENCE                     TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/btc-forecast-hpa   Deployment/btc-forecast-api   cpu: 1%/60%   2         4         2          25h
+
+NAME                                             CLASS   HOSTS                ADDRESS        PORTS   AGE
+ingress.networking.k8s.io/btc-forecast-ingress   nginx   btc-forecast.local   192.168.49.2   80      27h
+
+NAME                                   STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE   VOLUMEMODE
+persistentvolumeclaim/btc-models-pvc   Bound    pvc-bdb40940-9fd6-4f55-9f87-c3f20090c340   1Gi        RWO            standard       <unset>                 34h   Filesystem
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+btc-forecast-api   2/2     2            2           34h
+Labels:                                                <none>
+Annotations:                                           <none>
+CreationTimestamp:                                     Thu, 26 Nov 2026 00:49:38 -0500
+Reference:                                             Deployment/btc-forecast-api
+Metrics:                                               ( current / target )
+  resource cpu on pods  (as a percentage of request):  1% (1m) / 60%
+Min replicas:                                          2
+Max replicas:                                          4
+Deployment pods:                                       2 current / 2 desired
+Conditions:
+  Type            Status  Reason            Message
+  ----            ------  ------            -------
+  AbleToScale     True    ReadyForNewScale  recommended size matches current size
+  ScalingActive   True    ValidMetricFound  the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)
+  ScalingLimited  True    TooFewReplicas    the desired replica count is less than the minimum replica count
+  ScaledToZero    False   NotScaledToZero   the HPA controller did not scale the workload to zero
+Events:
+  Type     Reason          Age   From                       Message
+  ----     ------          ----  ----                       -------
+  Warning  FailedGetScale  18m   horizontal-pod-autoscaler  Unauthorized
